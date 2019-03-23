@@ -103,7 +103,6 @@ else()
     if(ENABLE_FFTW3)
     	target_link_libraries(EM2 FFTW3::FFTW3)
     endif()
-	target_link_libraries(EM2 m)
 endif()
 
 find_package(GSL REQUIRED)
