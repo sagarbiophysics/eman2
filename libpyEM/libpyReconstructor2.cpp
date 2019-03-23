@@ -36,8 +36,6 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <emdata.h>
-#include <emobject.h>
 #include <reconstructor.h>
 
 // Using =======================================================================

@@ -38,7 +38,6 @@
 #include <boost/python.hpp>
 
 #include "glutil.h"
-#include "emdata.h"
 #include "marchingcubes.h"
 
 #ifdef USE_FTGL

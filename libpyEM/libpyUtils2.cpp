@@ -32,23 +32,17 @@
 	#pragma warning(disable:4819)
 #endif	//_WIN32
 
-#include <Python.h>
 #include <numpy/arrayobject.h>
 
 // Boost Includes ==============================================================
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <emdata.h>
-#include <emutil.h>
 #include <sparx/lapackblas.h>
 #include <imageio.h>
 #include <testutil.h>
 #include <xydata.h>
-#include <emobject.h>
-#include <randnum.h>
 #include "ctf.h"
-#include "geometry.h"
 #include "portable_fileio.h"
 
 // Using =======================================================================

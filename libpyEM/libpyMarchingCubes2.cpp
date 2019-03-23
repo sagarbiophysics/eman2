@@ -37,7 +37,6 @@
 
 // Includes ====================================================================
 #include "marchingcubes.h"
-#include "emdata.h"
 
 // Using =======================================================================
 using namespace boost::python;

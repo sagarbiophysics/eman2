@@ -36,16 +36,12 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <aligner.h>
-#include <cmp.h>
-#include <ctf.h>
 #include <emdata.h>
 #include <emdata_pickle.h>
 #include <emdata_wrapitems.h>
-#include <emfft.h>
 #include <processor.h>
-#include <transform.h>
-#include <xydata.h>/** return the FFT amplitude which is greater than thres %
+
+/** return the FFT amplitude which is greater than thres %
  *
  * @exception ImageFormatException If the image is not a complex image.
  * @return The FFT amplitude which is greater than thres %.

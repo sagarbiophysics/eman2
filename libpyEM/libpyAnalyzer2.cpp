@@ -38,7 +38,6 @@
 // Includes ====================================================================
 #include <analyzer.h>
 #include <emdata.h>
-#include <emobject.h>
 
 // Using =======================================================================
 using namespace boost::python;

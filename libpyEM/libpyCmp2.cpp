@@ -38,9 +38,6 @@
 // Includes ====================================================================
 #include <cmp.h>
 #include <emdata.h>
-#include <emobject.h>
-#include <log.h>
-#include <transform.h>
 #include <xydata.h>
 
 // Using =======================================================================

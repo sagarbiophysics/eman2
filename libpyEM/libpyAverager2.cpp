@@ -37,8 +37,6 @@
 
 // Includes ====================================================================
 #include <averager.h>
-#include <emdata.h>
-#include <emobject.h>
 
 // Using =======================================================================
 using namespace boost::python;

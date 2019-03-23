@@ -36,14 +36,10 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <transform.h>
 #include <symmetry.h>
 #include <emdata.h>
 #include <emdata_pickle.h>
 #include <quaternion.h>
-#include <vec3.h>
-
-#include <string>
 
 // Using =======================================================================
 using namespace boost::python;

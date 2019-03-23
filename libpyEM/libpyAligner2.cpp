@@ -39,7 +39,6 @@
 #include <aligner.h>
 #include <ctf.h>
 #include <emdata.h>
-#include <emobject.h>
 #include <xydata.h>
 
 #include "emdata_pickle.h"
