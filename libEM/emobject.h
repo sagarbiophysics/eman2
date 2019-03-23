@@ -58,9 +58,6 @@ using std::pair;
 using std::cout;
 using std::endl;
 
-#include <cctype> // tolower
-#include <algorithm> //tolower
-#include "log.h"
 #include "exception.h"
 
 // #include "transform.h" // Trnasform3D::EulerType
