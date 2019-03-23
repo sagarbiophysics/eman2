@@ -37,16 +37,13 @@
 #endif	//_WIN32
 
 #include <cfloat>
-#include <complex>
 #include <fstream>
 
 #include "sparx/fundamentals.h"
 #include "emutil.h"
 #include "util.h"
-#include "sparx/emarray.h"
 #include "geometry.h"
 #include "transform.h"
-#include "vec3.h"
 #ifdef EMAN2_USING_CUDA
 #include <cuda_runtime_api.h>
 #include "cuda/cuda_util.h"
@@ -57,7 +54,6 @@ using std::map;
 //using std::complex;	//comment this out for conflict with ACML
 using std::ostream;
 
-#include <utility>
 using std::pair;
 
 namespace EMAN
