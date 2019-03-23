@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <averager.h>
+#include "averager.h"
 
 // Using =======================================================================
 using namespace boost::python;

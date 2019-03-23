@@ -36,8 +36,8 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <emdata.h>
-#include <projector.h>
+#include "emdata.h"
+#include "projector.h"
 
 // Using =======================================================================
 using namespace boost::python;

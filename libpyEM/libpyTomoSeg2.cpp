@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <tomoseg.h>
+#include "tomoseg.h"
 
 // Using =======================================================================
 using namespace boost::python;

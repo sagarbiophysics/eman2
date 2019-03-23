@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <pointarray.h>
+#include "pointarray.h"
 
 // Using =======================================================================
 using namespace boost::python;

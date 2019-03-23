@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <processor.h>
+#include "processor.h"
 
 // Using =======================================================================
 using namespace boost::python;

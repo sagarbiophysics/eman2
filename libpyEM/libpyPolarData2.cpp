@@ -36,8 +36,8 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <emdata.h>
-#include <polardata.h>
+#include "emdata.h"
+#include "polardata.h"
 
 // Using =======================================================================
 using namespace boost::python;

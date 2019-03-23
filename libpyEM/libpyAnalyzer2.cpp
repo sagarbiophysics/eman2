@@ -36,8 +36,8 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <analyzer.h>
-#include <emdata.h>
+#include "analyzer.h"
+#include "emdata.h"
 
 // Using =======================================================================
 using namespace boost::python;

@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <emobject.h>
+#include "emobject.h"
 
 // Using =======================================================================
 using namespace boost::python;

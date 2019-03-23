@@ -36,10 +36,10 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <aligner.h>
-#include <ctf.h>
 #include <emdata.h>
-#include <xydata.h>
+#include "aligner.h"
+#include "ctf.h"
+#include "xydata.h"
 
 #include "emdata_pickle.h"
 

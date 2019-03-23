@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <reconstructor.h>
+#include "reconstructor.h"
 
 // Using =======================================================================
 using namespace boost::python;

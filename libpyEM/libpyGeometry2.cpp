@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <geometry.h>
+#include "geometry.h"
 
 // Using =======================================================================
 using namespace boost::python;

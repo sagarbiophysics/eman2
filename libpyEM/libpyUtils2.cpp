@@ -38,10 +38,10 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <sparx/lapackblas.h>
-#include <imageio.h>
-#include <testutil.h>
-#include <xydata.h>
+#include "sparx/lapackblas.h"
+#include "imageio.h"
+#include "testutil.h"
+#include "xydata.h"
 #include "ctf.h"
 #include "portable_fileio.h"
 

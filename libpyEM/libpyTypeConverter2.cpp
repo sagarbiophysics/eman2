@@ -37,7 +37,7 @@
 #include <boost/python/numpy.hpp>
 
 // Includes ====================================================================
-#include <typeconverter.h>
+#include "typeconverter.h"
 
 // Using =======================================================================
 using namespace boost::python;

@@ -37,9 +37,9 @@
 
 // Includes ====================================================================
 #include <emdata.h>
-#include <emdata_pickle.h>
-#include <emdata_wrapitems.h>
-#include <processor.h>
+#include "emdata_pickle.h"
+#include "emdata_wrapitems.h"
+#include "processor.h"
 
 /** return the FFT amplitude which is greater than thres %
  *

@@ -36,7 +36,7 @@
 #include <boost/python.hpp>
 
 // Includes ====================================================================
-#include <pdbreader.h>
+#include "pdbreader.h"
 
 // Using =======================================================================
 using namespace boost::python;
