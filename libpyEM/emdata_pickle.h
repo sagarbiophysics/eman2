@@ -32,8 +32,6 @@
 #ifndef EMDATA_PICKLE_H_
 #define EMDATA_PICKLE_H_
 
-#include "emdata.h"
-#include "emobject.h"
 #include "ctf.h"
 
 struct EMData_pickle_suite : boost::python::pickle_suite
