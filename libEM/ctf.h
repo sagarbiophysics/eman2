@@ -33,8 +33,9 @@
 #define eman__ctf__h__ 1
 
 #include <cmath>
-
-#include "emobject.h"
+#include <vector>
+#include <map>
+#include <string>
 
 #ifdef WIN32
 	#ifndef M_PI
@@ -42,13 +43,15 @@
 	#endif	//M_PI
 #endif	//WIN32
 
-using std::string;
+using std::vector;
 using std::map;
+using std::string;
 
 namespace EMAN
 {
 	class EMData;
 	class XYData;
+	class Dict;
 
 	/** Ctf is the base class for all CTF model.
      *

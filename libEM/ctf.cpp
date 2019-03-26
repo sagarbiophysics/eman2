@@ -33,6 +33,7 @@
 #include "emdata.h"
 #include "xydata.h"
 #include "emassert.h"
+#include "emobject.h"
 
 using namespace EMAN;
 
