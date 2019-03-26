@@ -47,12 +47,12 @@ if(ENABLE_OPENGL)
 	ADD_PYSTE_LIB(pyMarchingCubes2)
 	
 	target_sources(pyMarchingCubes2 PRIVATE
-				   ${CMAKE_SOURCE_DIR}/libEM/marchingcubes.cpp
+				   marchingcubes.cpp
 				   )
 	target_sources(pyGLUtils2 PRIVATE
-				   ${CMAKE_SOURCE_DIR}/libEM/emftgl.cpp
-				   ${CMAKE_SOURCE_DIR}/libEM/glutil.cpp
-				   ${CMAKE_SOURCE_DIR}/libEM/marchingcubes.cpp
+				   emftgl.cpp
+				   glutil.cpp
+				   marchingcubes.cpp
 				   )
 	target_link_libraries(pyGLUtils2       OpenGL::OpenGL FTGL::FTGL)
 	target_link_libraries(pyMarchingCubes2 OpenGL::OpenGL)
