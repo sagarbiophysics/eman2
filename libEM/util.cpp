@@ -29,17 +29,18 @@
  *
  * */
 
-#include "byteorder.h"
 #include "emassert.h"
 #include "emdata.h"
 #include "util.h"
 #include "randnum.h"
+#include "transform.h"
 
 #include <fcntl.h>
 #include <iomanip>
 #include <sstream>
 
 #include <cstring>
+#include <cfloat>
 
 #include <ctype.h>
 #include <sys/types.h>
