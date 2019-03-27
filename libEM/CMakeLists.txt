@@ -3,25 +3,27 @@ add_subdirectory(pmconfig)
 if(WIN32)
 	add_library(EM2 STATIC "")
 else()
+	add_library(UTILS SHARED "")
+	add_library(EMDATA SHARED "")
 	add_library(EM2 SHARED "")
 endif()
 
-target_sources(EM2 PRIVATE
+target_sources(UTILS PRIVATE
+			   geometry.cpp
 			   byteorder.cpp
-			   boxingtools.cpp
+			   interp.cpp
+			   quaternion.cpp
+			   )
+
+target_sources(EMDATA PRIVATE
 			   emobject.cpp
 			   emfft.cpp
 			   log.cpp
 			   imageio.cpp
 			   util.cpp
 			   emutil.cpp
-			   interp.cpp
-			   quaternion.cpp
 			   transform.cpp
 			   symmetry.cpp
-			   geometry.cpp
-			   pointarray.cpp
-			   pdbreader.cpp
 			   mrcio.cpp
 			   dm3io.cpp
 			   dm4io.cpp
@@ -32,7 +34,6 @@ target_sources(EM2 PRIVATE
 			   emdata.cpp
 			   emdata_io.cpp
 			   emdata_core.cpp
-			   emdata_cuda.cpp
 			   emdata_modular.cpp
 			   emdata_metadata.cpp
 			   emdata_transform.cpp
@@ -66,14 +67,21 @@ target_sources(EM2 PRIVATE
 			   projector.cpp
 			   cmp.cpp
 			   averager.cpp
-			   reconstructor.cpp
 			   reconstructor_tools.cpp
 			   exception.cpp
+			   randnum.cpp
+			   )
+
+target_sources(EM2 PRIVATE
+			   hdf_filecache.cpp
+			   pdbreader.cpp
+			   pointarray.cpp
+			   polardata.cpp
+			   boxingtools.cpp
+			   emdata_cuda.cpp
+			   reconstructor.cpp
 			   testutil.cpp
 			   analyzer.cpp
-			   randnum.cpp
-			   hdf_filecache.cpp
-			   polardata.cpp
 			   tomoseg.cpp
 			   )
 

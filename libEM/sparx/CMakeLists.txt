@@ -1,4 +1,4 @@
-target_sources(EM2 PRIVATE
+target_sources(EMDATA PRIVATE
 			   		${CMAKE_CURRENT_LIST_DIR}/emdata_sparx.cpp
 			   		${CMAKE_CURRENT_LIST_DIR}/fundamentals.cpp
 			   		${CMAKE_CURRENT_LIST_DIR}/fourierfilter.cpp
