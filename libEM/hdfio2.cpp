@@ -38,9 +38,6 @@
 #include "transform.h"
 #include "ctf.h"
 
-#include <iostream>
-#include <cstring>
-
 #ifndef WIN32
 	#include <sys/param.h>
 #else

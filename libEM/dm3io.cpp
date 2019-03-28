@@ -29,8 +29,6 @@
  *
  * */
 
-#include <cstring>
-
 #include "dm3io.h"
 #include "portable_fileio.h"
 #include "geometry.h"

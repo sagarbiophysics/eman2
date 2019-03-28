@@ -32,14 +32,11 @@
 #include "util.h"
 #include <cstring>
 #include <sys/stat.h>
-#include <sys/types.h>
 #include <cstdio>
 
 #ifdef WIN32
 #include <time.h>
 #include <process.h>
-#else
-#include <unistd.h>
 #endif
 
 using namespace EMAN;

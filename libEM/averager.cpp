@@ -32,7 +32,6 @@
 #include "averager.h"
 #include "xydata.h"
 #include "ctf.h"
-#include <cstring>
 
 using namespace EMAN;
 

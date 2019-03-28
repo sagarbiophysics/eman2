@@ -33,13 +33,9 @@
  * */
 
 #include "emobject.h"
-#include <cmath>
 #ifdef WIN32
 #define M_PI 3.14159265358979323846f
 #endif
-
-#include <algorithm>
-// using copy
 
 #include "util.h"
 
@@ -59,9 +55,6 @@ const double EMConsts::pi = 3.141592653589793238462643383279502884197169399;
 const double EMConsts::deg2rad = pi/180.0;
 const double EMConsts::rad2deg = 180.0/pi;
 
-
-#include <sstream>
-using std::stringstream;
 
 #include "transform.h"
 #include "ctf.h"

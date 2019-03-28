@@ -29,9 +29,6 @@
  *
  * */
 
-#include <cstring>
-#include <climits>
-
 #include <sys/stat.h>
 
 #include "mrcio.h"

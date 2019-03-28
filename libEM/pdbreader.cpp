@@ -30,11 +30,6 @@
  * */
 
 #include "pdbreader.h"
-#include <vector>
-#include <cstring>
-#include <string>
-#include <stdio.h>
-#include <iostream>
 
 using namespace EMAN;
 

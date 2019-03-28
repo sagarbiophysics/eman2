@@ -32,7 +32,6 @@
 #include "gatan2io.h"
 #include "geometry.h"
 #include "portable_fileio.h"
-#include <cstring>
 
 using namespace EMAN;
 

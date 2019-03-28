@@ -29,9 +29,6 @@
  *
  * */
 
-#include <cmath>
-#include <cstdio>
-
 #ifdef _WIN32
 	#include <cfloat>
 #endif	//_WIN32

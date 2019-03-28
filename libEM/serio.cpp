@@ -33,8 +33,6 @@
 #include "util.h"
 #include "portable_fileio.h"
 
-#include <cassert>
-
 using namespace EMAN;
 
 static const short SER_BYTE_ORDER		= 0x4949;

@@ -34,9 +34,6 @@
 #include "portable_fileio.h"
 #include "util.h"
 #include "transform.h"
-#include <iostream>
-#include <ctime>
-#include <algorithm>
 
 using namespace EMAN;
 

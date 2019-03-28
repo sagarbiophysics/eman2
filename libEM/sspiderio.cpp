@@ -31,8 +31,6 @@
 
 #include "sspiderio.h"
 
-#include <iostream>
-
 using namespace EMAN;
 
 SingleSpiderIO::SingleSpiderIO(const string & file, IOMode rw)

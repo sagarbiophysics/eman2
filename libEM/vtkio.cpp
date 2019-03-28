@@ -29,8 +29,6 @@
  *
  * */
 
-#include <cstring>
-#include <climits>
 #include "vtkio.h"
 #include "util.h"
 #include "geometry.h"

@@ -29,7 +29,6 @@
  *
  * */
 
-#include <algorithm>
 #include <climits>
 
 #include "df3io.h"

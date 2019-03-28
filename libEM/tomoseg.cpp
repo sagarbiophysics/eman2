@@ -26,7 +26,6 @@
  */
 
 #include "tomoseg.h"
-#include <algorithm>
 using namespace EMAN;
 
 float DistToLine(int x0,int y0,int x1,int y1,int x2,int y2){

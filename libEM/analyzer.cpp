@@ -29,8 +29,6 @@
  *
  * */
 
-#include <ctime>
-#include <memory>
 #include "emdata.h"
 #include "sparx/analyzer_sparx.h"
 #include "sparx/lapackblas.h"

@@ -30,8 +30,6 @@
  * */
 
 
-#include <cstring>
-#include <math.h>
 #include <gsl/gsl_sf_bessel.h>
 #include "reconstructor_tools.h"
 

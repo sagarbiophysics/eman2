@@ -31,8 +31,6 @@
 
 
 #include "pointarray.h"
-#include <vector>
-#include <cstring>
 #include <boost/random.hpp>
 
 #ifdef __APPLE__

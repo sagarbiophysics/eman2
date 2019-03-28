@@ -39,10 +39,6 @@
 #define  MAXPATHLEN (MAX_PATH * 4)
 #endif
 
-#include <cstdio>
-#include <climits>
-#include <cstring>
-
 using namespace EMAN;
 
 const char *SalIO::HDR_EXT = "hdr";

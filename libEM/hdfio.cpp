@@ -41,8 +41,6 @@
 #include "hdfio.h"
 #include "geometry.h"
 #include "ctf.h"
-#include <iostream>
-#include <cstring>
 
 #ifndef UINT_16_MAX
 /* Minimum of signed integral types.  */

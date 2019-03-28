@@ -33,9 +33,6 @@
 
 #include "emdata.h"
 #include "all_imageio.h"
-#include <iostream>
-using std::cout;
-using std::endl;
 
 #include <boost/shared_ptr.hpp>
 using boost::shared_ptr;

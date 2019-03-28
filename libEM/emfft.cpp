@@ -29,14 +29,8 @@
  * 
  * */
 
-#include <string>
 #include <cstring>
-#include <complex>
 #include "emfft.h"
-
-#include <iostream>
-using std::cout;
-using std::endl;
 
 #include "util.h"
 

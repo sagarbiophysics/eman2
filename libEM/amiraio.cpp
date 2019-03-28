@@ -36,8 +36,6 @@
 	#define MAXPATHLEN (MAX_PATH*4)
 #endif	//WIN32
 
-#include <cstdio>
-
 #include "amiraio.h"
 #include "util.h"
 

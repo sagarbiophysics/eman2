@@ -39,8 +39,6 @@
 #define MAXPATHLEN (MAX_PATH*4)
 #endif
 
-#include <cstdio>
-#include <cstring>
 #include "lstfastio.h"
 #include "util.h"
 

@@ -32,12 +32,6 @@
 #include "reconstructor.h"
 #include "ctf.h"
 #include "symmetry.h"
-#include <cstring>
-#include <fstream>
-#include <iomanip>
-
-#include <gsl/gsl_statistics_double.h>
-#include <gsl/gsl_fit.h>
 
 #ifdef EMAN2_USING_CUDA
 #include "cuda/cuda_reconstructor.h"
@@ -51,9 +45,6 @@ using std::complex;
 using std::cerr;
 using std::endl;
 using std::cout; // for debug
-
-#include <algorithm>
-// find, for_each
 
 #include <iomanip>
 using std::setprecision;

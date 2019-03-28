@@ -32,16 +32,6 @@
 #include "emdata.h"
 #include "all_imageio.h"
 #include "emfft.h"
-#include <math.h>
-
-#include <gsl/gsl_sf_bessel.h>
-#include <gsl/gsl_errno.h>
-
-#include <iomanip>
-#include <complex>
-
-#include <algorithm> // fill
-#include <cmath>
 
 #ifdef WIN32
 	#define M_PI 3.14159265358979323846f

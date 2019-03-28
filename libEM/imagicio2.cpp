@@ -29,8 +29,6 @@
  *
  * */
 
-#include <cstring>
-#include <climits>
 #include "imagicio2.h"
 #include "portable_fileio.h"
 #include "util.h"

@@ -32,7 +32,6 @@
 #include "pifio.h"
 #include "portable_fileio.h"
 #include "geometry.h"
-#include <cstring>
 
 #ifdef WIN32
 #include <time.h>

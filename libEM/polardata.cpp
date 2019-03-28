@@ -29,8 +29,6 @@
  * 
  * */
 
-#include <new>
-#include <cmath>
 #include "polardata.h"
 
 #ifdef DEBUG

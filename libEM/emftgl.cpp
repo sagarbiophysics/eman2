@@ -39,13 +39,6 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
-#include <algorithm>
-#include <FTGL/FTGLExtrdFont.h>
-#include <FTGL/FTGLPixmapFont.h>
-#include <FTGL/FTGLTextureFont.h>
-#include <FTGL/FTGLBitmapFont.h>
-#include <FTGL/FTGLOutlineFont.h>
-#include <FTGL/FTGLPolygonFont.h>
 //static init
 // string  EMFTGL::font_file_name = "/usr/share/fonts/liberation/LiberationSans-Regular.ttf";
 // unsigned int EMFTGL::face_size = 32;

@@ -31,7 +31,6 @@
 
 #include "transform.h"
 #include "util.h"
-#include <cctype> // for std::tolower
 #include <cstring>  // for memcpy
 #include "symmetry.h"
 using namespace EMAN;
@@ -42,14 +41,7 @@ using namespace EMAN;
 #endif
 #endif
 
-#include <algorithm> // for std::transform
-
-#include <gsl/gsl_matrix.h>
-#include <gsl/gsl_blas.h>
 #include <gsl/gsl_linalg.h>
-
-#include <ostream>
-using std::ostream_iterator;
 
 //const float Transform3D::ERR_LIMIT = 0.000001f;
 

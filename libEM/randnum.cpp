@@ -30,8 +30,6 @@
 * */
 
 #include <cmath>
-#include <ctime>
-#include <cstdio>
 #ifndef _WIN32
 	#include <sys/time.h>
 #else

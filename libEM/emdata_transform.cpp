@@ -32,16 +32,7 @@
 #include "emdata.h"
 #include "emfft.h"
 
-#include <cstring>
-#include <cstdio>
-
-#include  "gsl/gsl_sf_result.h"
 #include  "gsl/gsl_sf_bessel.h"
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <utility>
-#include <cmath>
 
 //#ifdef EMAN2_USING_CUDA
 //#include "cuda/cuda_processor.h"

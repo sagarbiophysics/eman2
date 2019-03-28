@@ -35,12 +35,6 @@
 #include "portable_fileio.h"
 #include "imageio.h"
 
-#include <cstring>
-#include <sstream>
-using std::stringstream;
-
-#include <iomanip>
-using std::setprecision;
 using namespace EMAN;
 
 #ifdef EMAN2_USING_CUDA

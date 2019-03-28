@@ -34,24 +34,12 @@
 using namespace EMAN;
 
 
-#include <gsl/gsl_math.h>
-#include <gsl/gsl_vector.h>
 #include <gsl/gsl_linalg.h>
-
-// For random
-#include <cstdlib>
-#include <ctime>
 
 #include <iostream>
 using std::cerr;
 using std::cout;
 using std::endl;
-
-#include <string>
-using std::string;
-
-#include <algorithm>
-// find, min_element
 
 vector<Vec3f> BoxingTools::colors = vector<Vec3f>(); // static init
 BoxingTools::CmpMode BoxingTools::mode = SWARM_AVERAGE_RATIO;

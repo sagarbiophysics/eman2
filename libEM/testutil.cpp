@@ -39,7 +39,6 @@
 #include "testutil.h"
 #include "xydata.h"
 
-#include <algorithm>
 using std::vector;
 using std::string;
 using std::map;
