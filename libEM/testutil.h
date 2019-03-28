@@ -34,9 +34,6 @@
 
 #include "emdata.h"
 
-using std::map;
-using std::vector;
-using std::string;
 
 namespace EMAN
 {

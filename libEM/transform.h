@@ -39,7 +39,6 @@
 
 #include "vec3.h"
 #include "emobject.h"
-#include <cstdio>
 // #include <vector>
 // using std::vector;
 //

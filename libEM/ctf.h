@@ -34,7 +34,6 @@
 
 #include <cmath>
 #include <vector>
-#include <map>
 #include <string>
 
 #ifdef WIN32
@@ -44,7 +43,6 @@
 #endif	//WIN32
 
 using std::vector;
-using std::map;
 using std::string;
 
 namespace EMAN

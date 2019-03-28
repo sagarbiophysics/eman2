@@ -34,7 +34,6 @@
 
 #include "emobject.h"
 #include <gsl/gsl_linalg.h>
-using std::vector;
 
 namespace EMAN
 {

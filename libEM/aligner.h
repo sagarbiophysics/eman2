@@ -33,9 +33,6 @@
 #define eman__aligner_h__ 1
 
 
-#include "emobject.h"
-
-
 namespace EMAN
 {
 	class EMData;

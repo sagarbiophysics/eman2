@@ -31,7 +31,6 @@
 #ifndef EMDATA_WRAPPER_H_
 #define EMDATA_WRAPPER_H_
 
-#include "emdata.h"
 #include <boost/python.hpp>
 
 using boost::python::object;

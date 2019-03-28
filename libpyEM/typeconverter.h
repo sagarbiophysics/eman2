@@ -35,12 +35,8 @@
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #define PY_ARRAY_UNIQUE_SYMBOL PyArrayHandle
 
-#include "emobject.h"
-#include "transform.h"
-#include "geometry.h"
 #include "emdata.h"
 #include "xydata.h"
-#include "exception.h"
 #include "ctf.h"
 
 #include <boost/python.hpp>
@@ -48,19 +44,8 @@
 
 #include <numpy/ndarrayobject.h>
 
-#include <vector>
-#include <map>
-#include <string>
-
 namespace python = boost::python;
 namespace np = boost::python::numpy;
-
-using std::vector;
-using std::map;
-
-#include <iostream>
-using std::cout;
-using std::endl;
 
 #if PY_MAJOR_VERSION >= 3
 #define IS_PY3K

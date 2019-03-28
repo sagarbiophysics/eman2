@@ -38,10 +38,6 @@
 
 #include <log.h>
 
-#include <string>
-
-using std::string;
-
 #include <sstream>
 using std::stringstream;
 

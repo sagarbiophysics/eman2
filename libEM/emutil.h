@@ -32,12 +32,9 @@
 #ifndef eman__emutil__h__
 #define eman__emutil__h__ 1
 
-#include <string.h>
+#include <cstring>
 #include "emobject.h"
 #include "emassert.h"
-
-using std::string;
-using std::vector;
 
 // Defining EMDelete using templates
 // Use EMDelete instead of delete as this will be very clean.

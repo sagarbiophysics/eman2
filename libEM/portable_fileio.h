@@ -32,9 +32,6 @@
 #ifndef __portable_fileio_h__
 #define __portable_fileio_h__
 
-#include <cstdio>
-#include <sys/types.h>
-
 
 inline int portable_fseek(FILE * fp, off_t offset, int whence)
 {

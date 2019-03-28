@@ -33,15 +33,6 @@
 #define eman_boxingtools_h__ 1
 
 #include "emdata.h"
-#include "geometry.h"
-#include <vector>
-using std::vector;
-
-#include <vector>
-using std::vector;
-
-#include <map>
-using std::map;
 
 #include <gsl/gsl_matrix.h>
 

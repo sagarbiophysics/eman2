@@ -34,12 +34,6 @@
 #define eman_reconstructor_tools_h__ 1
 
 #include "emdata.h"
-#include "interp.h"
-
-#include <string>
-using std::string;
-
-#include <cstdlib>
 
 //debug
 #include <iostream>

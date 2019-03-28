@@ -32,11 +32,9 @@
 #ifndef eman__xydata_h__
 #define eman__xydata_h__ 1
 
-#include <string>
 #include <vector>
 #include "exception.h"
 
-using std::string;
 using std::vector;
 
 namespace EMAN

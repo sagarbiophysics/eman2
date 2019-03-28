@@ -33,24 +33,9 @@
 
 #ifndef eman_reconstructor_h__
 #define eman_reconstructor_h__ 1
-#include <fstream>
 #include <boost/shared_ptr.hpp>
-#include "emdata.h"
-#include "exception.h"
-#include "emobject.h"
-#include "interp.h"
 
-using std::vector;
-using std::map;
-using std::string;
 using boost::shared_ptr;
-
-using std::cout;
-using std::cerr;
-using std::endl;
-
-#include <utility>
-using std::pair;
 
 #include "reconstructor_tools.h"
 

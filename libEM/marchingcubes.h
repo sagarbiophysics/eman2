@@ -32,20 +32,11 @@
 #ifndef _MARCHING_CUBES_H_
 #define _MARCHING_CUBES_H_
 
-#include <vector>
-using std::vector;
-
 #include "vecmath.h"
 #include "isosurface.h"
 
 // Marching cubes debug will turn on debug and timing information
 #define MARCHING_CUBES_DEBUG 0
-
-#include <ostream>
-using std::ostream;
-
-#include <climits>
-// for CHAR_BIT
 
 #ifdef __APPLE__
 	#include "OpenGL/gl.h"

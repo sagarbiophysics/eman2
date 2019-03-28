@@ -32,11 +32,7 @@
 #ifndef eman_averager_h__
 #define eman_averager_h__ 1
 
-#include "emobject.h"
 #include "emdata.h"
-
-#include <vector>
-using std::vector;
 
 namespace EMAN
 {

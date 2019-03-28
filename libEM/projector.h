@@ -32,9 +32,6 @@
 #ifndef eman__projector_h__
 #define eman__projector_h__ 1
 
-#include "transform.h"
-
-using std::string;
 
 namespace EMAN
 {

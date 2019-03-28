@@ -34,18 +34,8 @@
 
 #include "emobject.h"
 #include "util.h"
-#include "geometry.h"
-#include "transform.h"
 #include "emdata.h"
 #include "gorgon/skeletonizer.h"
-
-#include <cfloat>
-#include <climits>
-#include <cstring>
-
-using std::vector;
-using std::map;
-using std::string;
 
 namespace EMAN
 {

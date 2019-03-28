@@ -33,8 +33,6 @@
 #define eman__symmetry_h__ 1
 
 
-#include "emobject.h"
-#include "vec3.h"
 #include "transform.h"
 
 namespace EMAN {

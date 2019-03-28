@@ -37,8 +37,6 @@ using std::string;
 
 #include <vector>
 using std::vector;
-
-#include <algorithm> // for copy
 		 
 namespace EMAN
 {

@@ -32,8 +32,6 @@
 #ifndef eman_pdbreader_h_
 #define eman_pdbreader_h_
 
-#include "emdata.h"
-#include "transform.h"
 #include "pointarray.h"
 
 #if defined USE_NFFT || USE_NFFT2
@@ -43,9 +41,6 @@ extern "C"
 	#include "utils.h"
 }
 #endif
-
-#include <sys/stat.h>
-#include <vector>
 
 
 namespace EMAN

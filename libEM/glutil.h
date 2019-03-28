@@ -31,8 +31,6 @@
 #ifndef glutil_h__
 #define glutil_h__
 
-#include <vector>
-#include "vec3.h"
 #include "transform.h"
 
 #ifdef __APPLE__

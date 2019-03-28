@@ -33,7 +33,6 @@
 #define eman_pointarray_h_
 
 #include "emdata.h"
-#include "transform.h"
 
 #if defined USE_NFFT || USE_NFFT2
 extern "C"
