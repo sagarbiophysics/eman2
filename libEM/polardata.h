@@ -34,6 +34,7 @@
 
 #include <map>
 #include <vector>
+#include <cstdio>
 #include "log.h"
 #include "exception.h"
 
