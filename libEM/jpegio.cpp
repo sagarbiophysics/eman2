@@ -40,8 +40,6 @@
 #include <math.h>
 #include "jpegio.h"
 #include "geometry.h"
-#include "util.h"
-
 using namespace EMAN;
 
 JpegIO::JpegIO(const string & file, IOMode rw):	filename(file), rw_mode(rw),
