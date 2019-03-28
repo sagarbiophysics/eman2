@@ -96,7 +96,7 @@ if(WIN32)
 	target_compile_definitions(EM2 PUBLIC _CRT_SECURE_NO_WARNINGS _SCL_SECURE_NO_WARNINGS)
 endif()
 
-install(TARGETS EM2
+install(TARGETS EM2 EMDATA UTILS
 		DESTINATION ${SP_DIR}
 		)
 
