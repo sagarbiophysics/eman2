@@ -42,7 +42,6 @@
 #include <vector>
 #include <utility>
 #include <cmath>
-#include "util.h"
 
 //#ifdef EMAN2_USING_CUDA
 //#include "cuda/cuda_processor.h"

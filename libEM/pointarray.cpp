@@ -31,8 +31,6 @@
 
 
 #include "pointarray.h"
-#include "util.h"
-#include "vec3.h"
 #include <vector>
 #include <cstring>
 #include <boost/random.hpp>

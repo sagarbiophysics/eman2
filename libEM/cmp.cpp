@@ -30,7 +30,6 @@
  * */
 
 #include "cmp.h"
-#include "emdata.h"
 #include "ctf.h"
 #include "plugins/cmp_template.h"
 #undef max

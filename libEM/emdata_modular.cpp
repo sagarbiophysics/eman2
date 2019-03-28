@@ -34,7 +34,6 @@
 #include "cmp.h"
 #include "aligner.h"
 #include "projector.h"
-#include "analyzer.h"
 
 using namespace EMAN;
 

@@ -30,8 +30,6 @@
  * */
 
 #include "emdata.h"
-#include "ctf.h"
-#include "emfft.h"
 #include "cmp.h"
 
 using namespace EMAN;

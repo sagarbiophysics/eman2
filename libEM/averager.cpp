@@ -30,11 +30,9 @@
  * */
 
 #include "averager.h"
-#include "emdata.h"
 #include "xydata.h"
 #include "ctf.h"
 #include <cstring>
-#include "plugins/averager_template.h"
 
 using namespace EMAN;
 

@@ -31,13 +31,7 @@
 
 #include "emdata.h"
 #include "all_imageio.h"
-#include "ctf.h"
-#include "processor.h"
-#include "aligner.h"
-#include "cmp.h"
 #include "emfft.h"
-#include "projector.h"
-#include "geometry.h"
 #include <math.h>
 
 #include <gsl/gsl_sf_bessel.h>

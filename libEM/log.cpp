@@ -29,7 +29,6 @@
  *
  * */
 
-#include "log.h"
 #include "util.h"
 #include <cstring>
 #include <sys/stat.h>

@@ -40,9 +40,6 @@
 #include "xydata.h"
 
 #include <algorithm>
-#include "emassert.h"
-//#include <stdlib.h>
-
 using std::vector;
 using std::string;
 using std::map;

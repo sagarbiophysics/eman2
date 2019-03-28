@@ -32,7 +32,6 @@
 #include "pifio.h"
 #include "portable_fileio.h"
 #include "geometry.h"
-#include "imageio.h"
 #include <cstring>
 
 #ifdef WIN32

@@ -33,8 +33,6 @@
 
 #include "emdata.h"
 #include "all_imageio.h"
-#include "ctf.h"
-
 #include <iostream>
 using std::cout;
 using std::endl;

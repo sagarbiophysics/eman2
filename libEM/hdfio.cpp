@@ -41,8 +41,6 @@
 #include "hdfio.h"
 #include "geometry.h"
 #include "ctf.h"
-#include "emassert.h"
-#include "transform.h"
 #include <iostream>
 #include <cstring>
 

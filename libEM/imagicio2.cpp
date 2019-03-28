@@ -36,7 +36,6 @@
 #include "util.h"
 #include "geometry.h"
 #include "ctf.h"
-#include "emassert.h"
 #include "transform.h"
 
 #ifdef _WIN32

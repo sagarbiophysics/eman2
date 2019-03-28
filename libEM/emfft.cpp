@@ -33,7 +33,6 @@
 #include <cstring>
 #include <complex>
 #include "emfft.h"
-#include "log.h"
 
 #include <iostream>
 using std::cout;

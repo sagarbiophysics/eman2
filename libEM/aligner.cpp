@@ -28,16 +28,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  * */
-#include "emfft.h"
 #include "cmp.h"
 #include "aligner.h"
 #include "averager.h"
-#include "emdata.h"
 #include "processor.h"
-#include "util.h"
 #include "symmetry.h"
 #include <gsl/gsl_multimin.h>
-#include "plugins/aligner_template.h"
 
 #ifdef EMAN2_USING_CUDA
 	#include "cuda/cuda_processor.h"

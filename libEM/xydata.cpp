@@ -40,8 +40,6 @@
 #include <cfloat>
 #include <cmath>
 #include <cstdio>
-#include "log.h"
-#include "exception.h"
 
 using namespace EMAN;
 

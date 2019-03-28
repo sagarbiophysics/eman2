@@ -35,8 +35,6 @@
 
 #include "hdfio2.h"
 #include "geometry.h"
-#include "ctf.h"
-#include "emassert.h"
 #include "transform.h"
 #include "ctf.h"
 

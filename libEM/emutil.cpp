@@ -38,12 +38,8 @@
 
 #include "all_imageio.h"
 #include "portable_fileio.h"
-#include "emcache.h"
 #include "emdata.h"
 #include "ctf.h"
-#include "emassert.h"
-#include "exception.h"
-#include "hdf_filecache.h"
 
 #include <boost/shared_ptr.hpp>
 using boost::shared_ptr;

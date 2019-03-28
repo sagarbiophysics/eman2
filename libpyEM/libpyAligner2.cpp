@@ -38,7 +38,6 @@
 // Includes ====================================================================
 #include <emdata.h>
 #include "aligner.h"
-#include "ctf.h"
 #include "xydata.h"
 
 #include "emdata_pickle.h"

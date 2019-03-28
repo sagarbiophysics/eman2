@@ -32,7 +32,6 @@
 #include "spiderio.h"
 #include "geometry.h"
 #include "portable_fileio.h"
-#include "emassert.h"
 #include "util.h"
 #include "transform.h"
 #include <iostream>

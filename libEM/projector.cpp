@@ -29,10 +29,8 @@
  *
  * */
 
-#include "projector.h"
 #include "emdata.h"
 #include "interp.h"
-#include "emutil.h"
 #include "plugins/projector_template.h"
 
 #ifdef WIN32

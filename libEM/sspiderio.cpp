@@ -30,8 +30,6 @@
  * */
 
 #include "sspiderio.h"
-#include "geometry.h"
-#include "portable_fileio.h"
 
 #include <iostream>
 

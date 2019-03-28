@@ -30,9 +30,6 @@
  * */
 
 #include "symmetry.h"
-#include "transform.h"
-#include "vec3.h"
-#include "exception.h"
 #include "util.h"
 
 using namespace EMAN;

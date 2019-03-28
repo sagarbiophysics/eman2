@@ -31,7 +31,6 @@
 
 
 #include "boxingtools.h"
-#include "exception.h"
 using namespace EMAN;
 
 

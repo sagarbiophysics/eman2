@@ -32,10 +32,7 @@
 #include <ctime>
 #include <memory>
 #include "emdata.h"
-#include "analyzer.h"
 #include "sparx/analyzer_sparx.h"
-#include "util.h"
-#include "cmp.h"
 #include "sparx/lapackblas.h"
 #include "sparx/varimax.h"
 

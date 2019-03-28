@@ -30,9 +30,7 @@
  * */
 
 #include "reconstructor.h"
-#include "plugins/reconstructor_template.h"
 #include "ctf.h"
-#include "emassert.h"
 #include "symmetry.h"
 #include <cstring>
 #include <fstream>

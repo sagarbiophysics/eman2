@@ -31,7 +31,6 @@
 
 #include "transform.h"
 #include "util.h"
-#include "emobject.h"
 #include <cctype> // for std::tolower
 #include <cstring>  // for memcpy
 #include "symmetry.h"
