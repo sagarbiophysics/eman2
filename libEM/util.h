@@ -49,10 +49,8 @@
 #endif
 
 #include <vector>
-#include <iostream>
-
+#include <complex>
 #include <string>
-using std::string;
 
 #include "sparx/emconstants.h"
 #include "exception.h"
