@@ -52,9 +52,8 @@ if(ENABLE_OPENGL)
 	target_sources(pyGLUtils2 PRIVATE
 				   emftgl.cpp
 				   glutil.cpp
-				   marchingcubes.cpp
 				   )
-	target_link_libraries(pyGLUtils2       OpenGL::OpenGL FTGL::FTGL)
+	target_link_libraries(pyGLUtils2       pyMarchingCubes2 FTGL::FTGL)
 	target_link_libraries(pyMarchingCubes2 OpenGL::OpenGL)
 endif()
 
