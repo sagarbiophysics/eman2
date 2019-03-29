@@ -41,6 +41,7 @@
 #include "emdata.h"
 #include "ctf.h"
 
+#include <gsl/gsl_linalg.h>
 #include <boost/shared_ptr.hpp>
 using boost::shared_ptr;
 
@@ -1994,3 +1995,194 @@ int EMUtil::delete_hdf_attribute(const string & filename, const string & key, in
 	else return -1;
 }
 #endif	//USE_HDF5
+vector<EMData *> Util::svdcmp(const vector<EMData *> &data,int nvec) {
+	int nimg=data.size();
+	if (nvec==0) nvec=nimg;
+	vector<EMData *> ret(nvec);
+	if (nimg==0) return ret;
+	int pixels=data[0]->get_xsize()*data[0]->get_ysize()*data[0]->get_zsize();
+
+	// Allocate the working space
+	gsl_vector *work=gsl_vector_alloc(nimg);
+	gsl_vector *S=gsl_vector_alloc(nimg);
+	gsl_matrix *A=gsl_matrix_alloc(pixels,nimg);
+	gsl_matrix *V=gsl_matrix_alloc(nimg,nimg);
+	gsl_matrix *X=gsl_matrix_alloc(nimg,nimg);
+
+	int im,x,y,z,i;
+	for (im=0; im<nimg; im++) {
+		for (z=0,i=0; z<data[0]->get_zsize(); z++) {
+			for (y=0; y<data[0]->get_ysize(); y++) {
+				for (x=0; x<data[0]->get_xsize(); x++,i++) {
+					gsl_matrix_set(A,i,im,data[im]->get_value_at(x,y,z));
+				}
+			}
+		}
+	}
+
+	// This calculates the SVD
+	gsl_linalg_SV_decomp_mod (A,X, V, S, work);
+
+	for (im=0; im<nvec; im++) {
+		EMData *a=data[0]->copy_head();
+		ret[im]=a;
+		for (z=0,i=0; z<data[0]->get_zsize(); z++) {
+			for (y=0; y<data[0]->get_ysize(); y++) {
+				for (x=0; x<data[0]->get_xsize(); x++,i++) {
+					a->set_value_at(x,y,z,static_cast<float>(gsl_matrix_get(A,i,im)));
+				}
+			}
+		}
+	}
+	return ret;
+}
+
+Dict Util::get_stats( const vector<float>& data )
+{
+	// Note that this is a heavy STL approach using generic algorithms - some memory could be saved
+	// using plain c style code, as in get_stats_cstyle below
+
+	if (data.size() == 0) EmptyContainerException("Error, attempting to call get stats on an empty container (vector<double>)");
+
+	double sum = accumulate(data.begin(), data.end(), 0.0);
+
+	double mean = sum / static_cast<double> (data.size());
+
+	double std_dev = 0.0, skewness = 0.0, kurtosis = 0.0;
+
+	if (data.size() > 1)
+	{
+		// read mm is "minus_mean"
+		vector<double> data_mm(data.size());
+		// read ts as "then squared"
+		vector<double> data_mm_sq(data.size());
+
+		// Subtract the mean from the data and store it in data_mm
+		transform(data.begin(), data.end(), data_mm.begin(), std::bind2nd(std::minus<double>(), mean));
+
+		// Get the square of the data minus the mean and store it in data_mm_sq
+		transform(data_mm.begin(), data_mm.end(), data_mm.begin(), data_mm_sq.begin(), std::multiplies<double>());
+
+		// Get the sum of the squares for the calculation of the standard deviation
+		double square_sum = accumulate(data_mm_sq.begin(), data_mm_sq.end(), 0.0);
+
+		//Calculate teh standard deviation
+		std_dev = sqrt(square_sum / static_cast<double>(data.size()-1));
+		double std_dev_sq = std_dev * std_dev;
+
+		// The numerator for the skewness fraction, as defined in http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm
+		double cubic_sum = inner_product(data_mm.begin(), data_mm.end(),data_mm_sq.begin(), 0.0);
+
+		// The numerator for the kurtosis fraction, as defined in http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm
+		double quartic_sum = inner_product(data_mm_sq.begin(), data_mm_sq.end(),data_mm_sq.begin(), 0.0);
+
+		// Finalize the calculation of the skewness and kurtosis, as defined in
+		// http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm
+		skewness = cubic_sum / ((data.size()-1) * std_dev_sq * std_dev );
+		kurtosis = quartic_sum / ((data.size()-1) * std_dev_sq * std_dev_sq );
+
+	}
+
+	Dict parms;
+	parms["mean"] = mean;
+	parms["std_dev"] = std_dev;
+	parms["skewness"] = skewness;
+	parms["kurtosis"] = kurtosis;
+
+	return parms;
+}
+
+
+Dict Util::get_stats_cstyle( const vector<float>& data )
+{
+	if (data.size() == 0) EmptyContainerException("Error, attempting to call get stats on an empty container (vector<double>)");
+
+	double square_sum = 0.0, sum = 0.0, cube_sum = 0.0, quart_sum = 0.0;
+	for( vector<float>::const_iterator it = data.begin(); it != data.end(); ++it )
+	{
+		double val = *it;
+		double square = val*val;
+		quart_sum += square*square;
+		cube_sum += square*val;
+		square_sum += square;
+		sum += val;
+	}
+
+	double mean = sum/(double)data.size();
+
+	double std_dev = 0.0, skewness = 0.0, kurtosis = 0.0;
+
+	if (data.size() > 1)
+	{
+		// The standard deviation is calculated here
+		std_dev = sqrt( (square_sum - mean*sum)/(double)(data.size()-1));
+
+		double square_mean = mean*mean;
+		double cube_mean = mean*square_mean;
+
+		double square_std_dev = std_dev*std_dev;
+
+		// This is the numerator of the skewness fraction, if you expand the brackets, as defined in
+		// http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm
+		double cubic_sum = cube_sum - 3*square_sum*mean + 3*sum*square_mean - cube_mean*data.size();
+		// Complete the skewness fraction
+		skewness = cubic_sum/((data.size()-1)*square_std_dev*std_dev);
+
+		// This is the numerator of the kurtosis fraction, if you expand the brackets, as defined in
+		// http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm
+		double quartic_sum = quart_sum - 4*cube_sum*mean + 6*square_sum*square_mean - 4*sum*cube_mean  + square_mean*square_mean*data.size();
+		// Complete the kurtosis fraction
+		kurtosis = quartic_sum /( (data.size()-1)*square_std_dev*square_std_dev);
+	}
+
+	Dict parms;
+	parms["mean"] = mean;
+	parms["std_dev"] = std_dev;
+	parms["skewness"] = skewness;
+	parms["kurtosis"] = kurtosis;
+
+	return parms;
+}
+
+bool Util::point_is_in_triangle_2d(const Vec2f& p1, const Vec2f& p2, const Vec2f& p3,const Vec2f& point)
+{
+
+	Vec2f u = p2 - p1;
+	Vec2f v = p3 - p1;
+	Vec2f w = point - p1;
+
+	float udotu = u.dot(u);
+	float udotv = u.dot(v);
+	float udotw = u.dot(w);
+	float vdotv = v.dot(v);
+	float vdotw = v.dot(w);
+
+	float d = 1.0f/(udotv*udotv - udotu*vdotv);
+	float s = udotv*vdotw - vdotv*udotw;
+	s *= d;
+
+	float t = udotv*udotw - udotu*vdotw;
+	t *= d;
+
+	// We've done a few multiplications, so detect when there are tiny residuals that may throw off the final
+	// decision
+	if (fabs(s) < Transform::ERR_LIMIT ) s = 0;
+	if (fabs(t) < Transform::ERR_LIMIT ) t = 0;
+
+	if ( fabs((fabs(s)-1.0)) < Transform::ERR_LIMIT ) s = 1;
+	if ( fabs((fabs(t)-1.0)) < Transform::ERR_LIMIT ) t = 1;
+
+// 	cout << "s and t are " << s << " " << t << endl;
+
+	// The final decision, if this is true then we've hit the jackpot
+	if ( s >= 0 && t >= 0 && (s+t) <= 1 ) return true;
+	else return false;
+}
+
+bool Util::point_is_in_convex_polygon_2d(const Vec2f& p1, const Vec2f& p2, const Vec2f& p3, const Vec2f& p4,const Vec2f& actual_point)
+{
+
+	if (point_is_in_triangle_2d(p1,p2,p4,actual_point)) return true;
+	else return point_is_in_triangle_2d(p3,p2,p4,actual_point);
+}
+
