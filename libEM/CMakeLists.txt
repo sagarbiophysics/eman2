@@ -85,6 +85,10 @@ target_sources(EM2 PRIVATE
 			   tomoseg.cpp
 			   )
 
+target_link_libraries(UTILS Boost::python)
+target_link_libraries(EMDATA UTILS GSL::gsl GSL::gslcblas)
+target_link_libraries(EM2 EMDATA)
+
 add_subdirectory(gorgon)
 add_subdirectory(sparx)
 
@@ -106,7 +110,7 @@ if(ENABLE_FFTW3)
 endif()
 
 if(WIN32 OR ENABLE_FFTW3)
-    target_link_libraries(EM2 FFTW3::FFTW3)
+    target_link_libraries(EMDATA FFTW3::FFTW3)
 endif()
 
 find_package(GSL REQUIRED)
@@ -132,7 +136,7 @@ if(ENABLE_JPEG)
 endif()
 
 include(${CMAKE_SOURCE_DIR}/cmake/HDF5.cmake)
-target_link_libraries(EM2 HDF5::HDF5)
+target_link_libraries(EMDATA HDF5::HDF5)
 
 option(ENABLE_PNG "enable PNG support" ON)
 if(ENABLE_PNG)
