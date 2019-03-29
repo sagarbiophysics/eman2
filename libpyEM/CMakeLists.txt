@@ -53,8 +53,8 @@ if(ENABLE_OPENGL)
 				   emftgl.cpp
 				   glutil.cpp
 				   )
-	target_link_libraries(pyGLUtils2       pyMarchingCubes2 FTGL::FTGL)
 	target_link_libraries(pyMarchingCubes2 OpenGL::OpenGL)
+	target_link_libraries(pyGLUtils2       pyMarchingCubes2 FTGL::FTGL)
 endif()
 
 file(GLOB empythonlibs "${CMAKE_CURRENT_SOURCE_DIR}/*.py")
