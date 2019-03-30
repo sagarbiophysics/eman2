@@ -1,16 +1,9 @@
 add_subdirectory(pmconfig)
 
-if(WIN32)
-	add_library(UTILS  STATIC "")
-	add_library(UTILS1 STATIC "")
-	add_library(EMDATA STATIC "")
-	add_library(EM2    STATIC "")
-else()
-	add_library(UTILS  SHARED "")
-	add_library(UTILS1 SHARED "")
-	add_library(EMDATA SHARED "")
-	add_library(EM2    SHARED "")
-endif()
+add_library(UTILS  SHARED "")
+add_library(UTILS1 SHARED "")
+add_library(EMDATA SHARED "")
+add_library(EM2    SHARED "")
 
 target_sources(UTILS PRIVATE
 			   geometry.cpp
