@@ -4,6 +4,7 @@ if(WIN32)
 	add_library(EM2 STATIC "")
 else()
 	add_library(UTILS SHARED "")
+	add_library(UTILS1 SHARED "")
 	add_library(EMDATA SHARED "")
 	add_library(EM2 SHARED "")
 endif()
@@ -15,12 +16,17 @@ target_sources(UTILS PRIVATE
 			   quaternion.cpp
 			   )
 
+target_sources(UTILS1 PRIVATE
+			   exception.cpp
+			   util.cpp
+			   randnum.cpp
+			   xydata.cpp
+			   log.cpp
+			   )
 target_sources(EMDATA PRIVATE
 			   emobject.cpp
 			   emfft.cpp
-			   log.cpp
 			   imageio.cpp
-			   util.cpp
 			   emutil.cpp
 			   transform.cpp
 			   symmetry.cpp
@@ -59,20 +65,17 @@ target_sources(EMDATA PRIVATE
 			   omapio.cpp
 			   situsio.cpp
 			   serio.cpp
-			   emcache.cpp
 			   ctf.cpp
-			   xydata.cpp
 			   processor.cpp
 			   aligner.cpp
 			   projector.cpp
 			   cmp.cpp
 			   averager.cpp
 			   reconstructor_tools.cpp
-			   exception.cpp
-			   randnum.cpp
 			   )
 
 target_sources(EM2 PRIVATE
+			   emcache.cpp
 			   hdf_filecache.cpp
 			   pdbreader.cpp
 			   pointarray.cpp
@@ -86,7 +89,8 @@ target_sources(EM2 PRIVATE
 			   )
 
 target_link_libraries(UTILS Boost::python)
-target_link_libraries(EMDATA UTILS GSL::gsl GSL::gslcblas)
+target_link_libraries(UTILS1 UTILS GSL::gsl GSL::gslcblas)
+target_link_libraries(EMDATA UTILS1)
 target_link_libraries(EM2 EMDATA)
 
 add_subdirectory(gorgon)
