@@ -66,8 +66,7 @@ set(CMAKE_INSTALL_PREFIX ${EMAN_PREFIX} CACHE PATH "installation prefix" FORCE)
 set(CMAKE_PREFIX_PATH    ${EMAN_PREFIX} ${EMAN_PREFIX}/..)
 message_var(CMAKE_PREFIX_PATH)
 
-find_package(Python REQUIRED)
-find_package(NumPy  REQUIRED)
+include(cmake/find_all.cmake)
 
 # Write relative path that will be used to compute EMAN2DIR in libpyEM/EMAN2.py
 if(NOT WIN32)
@@ -242,9 +241,6 @@ IF(ENABLE_EMAN_CUDA)
 	ADD_SUBDIRECTORY(libEM/cuda)
 ENDIF()
 
-# Find Boost
-include(cmake/Boost.cmake)
-
 ADD_SUBDIRECTORY(libEM)
 ADD_SUBDIRECTORY(libpyEM)
 ADD_SUBDIRECTORY(pyemtbx)
@@ -268,69 +264,4 @@ if(NOT WIN32)
 			)
 endif()
 
-enable_testing()
-
-add_custom_target(test-verbose
-		COMMAND ${CMAKE_COMMAND} -P cmake_install.cmake
-		COMMAND ${CMAKE_CTEST_COMMAND} -V -C Release
-		)
-
-add_test(NAME imports
-		 COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tests/test_imports.py
-		 )
-
-add_test(NAME test-EMAN2DIR
-		 COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tests/test_EMAN2DIR.py
-		 )
-
-find_package(Nosetests)
-
-if(NOT WIN32)
-	add_test(NAME nose-tests
-			COMMAND ${NOSETESTS_EXECUTABLE} -vv --exe -m "^test_*" -e "^test_image_" -e "test_main" -e "test_result" -e "test_boxing" -a \!broken
-					${CMAKE_SOURCE_DIR}/rt/pyem/ 
-			)
-else()
-	set(test_methods-win
-			test_imageio.py:TestHdfIO.test_read_image
-			test_imageio.py:TestHdfIO.test_write_image
-			test_imageio.py:TestHdfIO.test_read_write_hdf
-			test_imageio.py:TestPNGIO.test_write_png
-		)
-
-	foreach(t ${test_methods-win})
-		add_test(NAME ${t}
-				COMMAND ${NOSETESTS_EXECUTABLE} -v -m "^test_*" -a \!broken
-						${CMAKE_SOURCE_DIR}/rt/pyem/${t}
-				)
-	endforeach()
-endif()
-
-add_custom_target(test-rt
-		COMMAND ${CMAKE_CTEST_COMMAND} -V -C Release -R nose-tests
-		DEPENDS PythonFiles
-		)
-
-add_custom_target(test-verbose-broken
-		COMMAND ${NOSETESTS_EXECUTABLE} -v -m "^test_*" -a broken ${CMAKE_SOURCE_DIR}/rt/pyem/*
-		)
-
-if(NOT WIN32)
-	add_custom_target(test-progs
-					  COMMAND ${CMAKE_CTEST_COMMAND} -V -C Release -R progs
-					  DEPENDS PythonFiles
-					  )
-	
-	add_test(NAME progs
-			 COMMAND bash ${CMAKE_SOURCE_DIR}/tests/run_prog_tests.sh
-			 )
-endif()
-
-add_test(NAME py-compile
-		COMMAND ${PYTHON_EXECUTABLE} -m compileall -q ${CMAKE_SOURCE_DIR}
-		)
-
-add_custom_target(test-py-compile
-		COMMAND ${CMAKE_CTEST_COMMAND} -V -C Release -R py-compile
-		DEPENDS PythonFiles
-		)
+include(cmake/testing.cmake)

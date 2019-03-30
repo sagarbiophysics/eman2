@@ -102,6 +102,7 @@ install(TARGETS EM2 EMDATA UTILS1 UTILS
 
 if(ENABLE_FFTW3)
 	find_package(FFTW3 REQUIRED)
+    target_link_libraries(EMDATA FFTW3::FFTW3)
 	
 	if(ENABLE_NFFT2)
 		find_package(NFFT2 REQUIRED)
@@ -109,11 +110,6 @@ if(ENABLE_FFTW3)
 	endif()
 endif()
 
-if(WIN32 OR ENABLE_FFTW3)
-    target_link_libraries(EMDATA FFTW3::FFTW3)
-endif()
-
-find_package(GSL REQUIRED)
 if(WIN32)
 	set_target_properties(GSL::gsl
 						  PROPERTIES
@@ -135,7 +131,6 @@ if(ENABLE_JPEG)
     target_link_libraries(EMDATA JPEG::JPEG)
 endif()
 
-include(${CMAKE_SOURCE_DIR}/cmake/HDF5.cmake)
 target_link_libraries(EMDATA HDF5::HDF5)
 
 option(ENABLE_PNG "enable PNG support" ON)
